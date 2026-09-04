@@ -1,112 +1,121 @@
 # Customer Shopping Behavior Analysis
 
-End-to-end customer analytics project built with **Python, MySQL, and Power BI**. It turns 3,900 retail purchase records into a repeatable workflow for data preparation, SQL analysis, interactive reporting, and business-facing communication.
+> End-to-end data analytics project using **Python, MySQL, and Power BI** to uncover customer, product, promotion, and revenue insights from 3,900 retail purchase records.
 
-## Business objective
+## Project at a glance
 
-Understand the customer, product, and promotion patterns that influence revenue and retention. The project answers questions such as:
-
-- Which customer groups and product categories generate the most revenue?
-- Do discounts, subscriptions, and shipping choices relate to customer spend?
-- Which products earn the best ratings and receive discounts most often?
-- How can customers be segmented by purchase history?
-
-## Dashboard and deliverables
-
-| Deliverable | Location |
+| Area | What I delivered |
 | --- | --- |
-| Interactive Power BI dashboard | [`powerbi/customer_behaviour_dashboard.pbix`](powerbi/customer_behaviour_dashboard.pbix) |
-| MySQL business queries | [`sql/customer_shopping_behavior_analysis.sql`](sql/customer_shopping_behavior_analysis.sql) |
-| Python preparation notebook | [`notebooks/customer_shopping_behavior_analysis.ipynb`](notebooks/customer_shopping_behavior_analysis.ipynb) |
-| Written report | [`reports/Customer Shopping Behavior Analysis.pdf`](reports/Customer%20Shopping%20Behavior%20Analysis.pdf) |
-| Presentation deck | [`presentation/Customer-Shopping-Behavior-Analysis.pptx`](presentation/Customer-Shopping-Behavior-Analysis.pptx) |
+| Business problem | Identified patterns in customer spend, subscriptions, discount use, shipping, product ratings, and repeat purchases. |
+| Data preparation | Cleaned and standardized fields, created age groups, and engineered purchase-frequency features with Python and Pandas. |
+| SQL analysis | Wrote business queries using aggregations, CTEs, `CASE` logic, subqueries, and window functions. |
+| Dashboarding | Built an interactive Power BI dashboard to make findings accessible to stakeholders. |
+| Communication | Produced a written report and presentation that translate analysis into business insights. |
+
+## Recruiter highlights
+
+This project demonstrates my ability to take a raw public dataset through a complete analytics workflow:
+
+- Clean and transform data with **Python, Pandas, and Jupyter Notebook**.
+- Load and query analytical data in **MySQL**.
+- Use **CTEs, window functions, aggregations, conditional logic, and subqueries** to answer business questions.
+- Build stakeholder-focused reporting in **Power BI**.
+- Communicate findings through a formal report and presentation.
+
+## Business questions answered
+
+- Which categories, customer groups, and age segments contribute the most revenue?
+- How does spend vary by gender, subscription status, and shipping type?
+- Which discounted purchases exceed the overall average purchase value?
+- Which products have the highest average ratings and the highest discount-use rates?
+- How can customers be classified as new, returning, or loyal based on prior purchases?
+- Which products are most frequently purchased within each category?
 
 ## Key findings
 
-The figures below are calculated from the included dataset.
+All results below were calculated from the included dataset.
 
-| Metric | Result | Takeaway |
+| Metric | Result | Business interpretation |
 | --- | ---: | --- |
-| Customers / purchase records | 3,900 | Broad base for exploratory segmentation |
-| Total revenue | $233,081 | Overall revenue represented in the dataset |
-| Average purchase value | $59.76 | Useful benchmark for customer-level comparisons |
-| Highest-revenue category | Clothing ($104,264) | Primary category for commercial focus |
-| Discounted transactions | 43.0% | Promotions are used frequently |
-| Top-rated product | Gloves (3.86 / 5) | A strong product candidate for merchandising analysis |
-| Subscriber average spend | $59.49 | Similar to non-subscribers ($59.87); subscription value should be evaluated beyond spend alone |
+| Purchase records analyzed | 3,900 | Sufficient scope for exploratory customer segmentation. |
+| Total revenue | $233,081 | Total revenue represented by the dataset. |
+| Average purchase value | $59.76 | Benchmark used to identify above-average transactions. |
+| Highest-revenue category | Clothing ($104,264) | Largest category revenue opportunity. |
+| Discounted transactions | 43.0% | Promotional activity is a material part of the purchase journey. |
+| Highest-rated product | Gloves (3.86 / 5) | Potential product to investigate for merchandising and customer satisfaction. |
+| Subscriber average spend | $59.49 | Comparable with non-subscribers ($59.87), suggesting subscription value should be assessed beyond average spend alone. |
 
-> **Note:** This dataset contains more male than female purchase records, so gender-level revenue totals should be interpreted alongside record counts rather than as a direct spending comparison.
+> The dataset has more male than female purchase records. Revenue comparisons by gender should therefore be assessed alongside customer counts, not in isolation.
 
-## Workflow
-
-```text
-Raw CSV → Python data preparation → MySQL business queries → Power BI dashboard → Report & presentation
-```
-
-1. **Python / Pandas** standardizes column names, creates age groups and purchase-frequency fields, and prepares the data for analysis.
-2. **MySQL** answers ten focused business questions, including revenue comparisons, customer segmentation, top products by rating, and discount behavior.
-3. **Power BI** presents the results in an interactive dashboard for stakeholder exploration.
-4. **Report and presentation** communicate the findings and recommendations in business-friendly formats.
-
-## Repository structure
+## Analytics workflow
 
 ```text
-.
-├── data/raw/        Source dataset
-├── notebooks/       Python / Jupyter data-preparation workflow
-├── sql/             MySQL analysis queries
-├── powerbi/         Power BI dashboard (.pbix)
-├── reports/         Analysis report (PDF and DOCX)
-└── presentation/    Presentation deck
+Public CSV dataset
+        |
+        v
+Python data cleaning and feature engineering
+        |
+        v
+MySQL exploratory and business analysis
+        |
+        v
+Power BI dashboard
+        |
+        v
+Business report and presentation
 ```
 
-## Dataset
+## Repository contents
 
-Source file: [`data/raw/customer_shopping_behavior.csv`](data/raw/customer_shopping_behavior.csv)
+| Folder / file | Description |
+| --- | --- |
+| [`data/raw/`](data/raw/) | Original public customer shopping dataset. |
+| [`notebooks/customer_shopping_behavior_analysis.ipynb`](notebooks/customer_shopping_behavior_analysis.ipynb) | Python data-cleaning, feature-engineering, and database-loading workflow. |
+| [`sql/customer_shopping_behavior_analysis.sql`](sql/customer_shopping_behavior_analysis.sql) | MySQL queries answering the core business questions. |
+| [`powerbi/customer_behaviour_dashboard.pbix`](powerbi/customer_behaviour_dashboard.pbix) | Interactive Power BI dashboard. |
+| [`reports/`](reports/) | Written analysis report in PDF and DOCX formats. |
+| [`presentation/Customer-Shopping-Behavior-Analysis.pptx`](presentation/Customer-Shopping-Behavior-Analysis.pptx) | Stakeholder presentation deck. |
 
-- **Granularity:** one customer purchase record
-- **Size:** 3,900 records and 18 source columns
-- **Fields include:** customer ID, age, gender, item and category, purchase amount, location, review rating, subscription status, shipping type, discount and promotion use, previous purchases, payment method, and purchase frequency.
+## Technical skills used
 
-## Run the project
+- **Python:** Pandas, Jupyter Notebook, SQLAlchemy
+- **SQL / MySQL:** Data aggregation, CTEs, window functions, `CASE` statements, subqueries, segmentation
+- **Power BI:** Interactive dashboard development and business reporting
+- **Analytics:** Data cleaning, feature engineering, exploratory data analysis, KPI development, customer segmentation
+- **Communication:** Insight reporting and presentation design
+
+## How to run the project
 
 ### Prerequisites
 
 - Python 3.9+ with `pandas`, `jupyter`, and `sqlalchemy`
 - MySQL 8+
-- Power BI Desktop (to open or refresh the dashboard)
+- Power BI Desktop
 
-### 1. Explore and prepare the data
+### 1. Run the Python notebook
 
-From the repository root, launch Jupyter:
+From the repository root:
 
 ```bash
 jupyter notebook
 ```
 
-Open `notebooks/customer_shopping_behavior_analysis.ipynb`. Update the CSV path to `data/raw/customer_shopping_behavior.csv` if your Jupyter working directory is the repository root.
+Open `notebooks/customer_shopping_behavior_analysis.ipynb` and run the cells. The notebook reads `data/raw/customer_shopping_behavior.csv` when launched from the repository root.
 
-### 2. Load and analyze in MySQL
+### 2. Run the MySQL analysis
 
-The notebook standardizes source-column names (for example, `Purchase Amount (USD)` becomes `purchase_amount`) and derives `age_group`. Load that prepared dataset into a MySQL table named `customer`, then run:
+The notebook standardizes column names and derives `age_group`. Load the prepared data into a MySQL table named `customer`, then execute:
 
 ```sql
 SOURCE sql/customer_shopping_behavior_analysis.sql;
 ```
 
-The SQL script creates/uses the `customer_behavior` database and contains the analysis queries.
-
 ### 3. Explore the dashboard
 
-Open `powerbi/customer_behaviour_dashboard.pbix` in Power BI Desktop. If prompted, update the data-source path to the local CSV or prepared dataset.
-
-## Tools
-
-- **Python:** Pandas, Jupyter Notebook, SQLAlchemy
-- **Database:** MySQL
-- **Visualization:** Microsoft Power BI
-- **Documentation:** Microsoft Word and PowerPoint
+Open `powerbi/customer_behaviour_dashboard.pbix` in Power BI Desktop. Update the data-source path if Power BI prompts you to do so.
 
 ## Author
 
-Tanish Israni
+**Tanish Israni**
+
+If you are reviewing this project as part of my portfolio, please see the SQL script, Power BI dashboard, report, and presentation for the complete analysis.
